@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
   TODO: Add long description of the pod here.
                          DESC
   
-    s.homepage         = 'https://git.saybot.net/ios/alo7-homework-sdk'
+    s.homepage         = 'https://github.com/alo7/ios-homework-sdk'
     # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'Dapeng Li' => 'dapeng.li@alo7.com' }
-    s.source           = { :git => 'git@git.saybot.net:ios/alo7-homework-sdk.git', :tag => s.version.to_s }
+    s.source           = { :git => 'https://github.com/alo7/ios-homework-sdk.git', :tag => s.version.to_s }
     # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   
     s.ios.deployment_target = '10.0'
