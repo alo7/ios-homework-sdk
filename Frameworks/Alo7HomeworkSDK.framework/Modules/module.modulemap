@@ -1,0 +1,11 @@
+framework module Alo7HomeworkSDK {
+  umbrella header "Alo7HomeworkSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module Alo7HomeworkSDK.Swift {
+    header "Alo7HomeworkSDK-Swift.h"
+    requires objc
+}
