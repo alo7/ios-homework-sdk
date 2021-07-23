@@ -14,6 +14,10 @@ extension AVAudioPlayer : RxCocoa.HasDelegate {
 }
 public typealias FailHandler = (Swift.Error?) -> Swift.Void
 public typealias SuccessHandler = () -> Swift.Void
+public typealias StateHandler = (Alo7HomeworkSDK.Alo7HomeworkResultState) -> Swift.Void
+public enum Alo7HomeworkResultState {
+  case close(data: [Swift.String : Any?]?)
+}
 public struct Alo7HomeworkConfig {
   public static var `default`: Alo7HomeworkSDK.Alo7HomeworkConfig
 }
@@ -26,9 +30,9 @@ public enum Alo7HomeworkError : Swift.Error {
   case unknown
 }
 public func start(with: Any?)
-public func assignHomework(token: Swift.String, thirdPartyClazzIds: [Swift.String]? = nil, from: UIKit.UIViewController, success: Alo7HomeworkSDK.SuccessHandler?, fail: Alo7HomeworkSDK.FailHandler?)
-public func checkHomework(_ homeworkId: Swift.String, token: Swift.String, from: UIKit.UIViewController, config: Alo7HomeworkSDK.Alo7HomeworkConfig? = nil, success: Alo7HomeworkSDK.SuccessHandler?, fail: Alo7HomeworkSDK.FailHandler?)
-public func showHomework(_ homeworkId: Swift.String, token: Swift.String, from: UIKit.UIViewController, config: Alo7HomeworkSDK.Alo7HomeworkConfig? = nil, success: Alo7HomeworkSDK.SuccessHandler?, fail: Alo7HomeworkSDK.FailHandler?)
+public func assignHomework(token: Swift.String, thirdPartyClazzIds: [Swift.String]? = nil, from: UIKit.UIViewController, success: Alo7HomeworkSDK.SuccessHandler?, fail: Alo7HomeworkSDK.FailHandler?, stateHandler: Alo7HomeworkSDK.StateHandler? = nil)
+public func checkHomework(_ homeworkId: Swift.String, token: Swift.String, from: UIKit.UIViewController, config: Alo7HomeworkSDK.Alo7HomeworkConfig? = nil, success: Alo7HomeworkSDK.SuccessHandler?, fail: Alo7HomeworkSDK.FailHandler?, stateHandler: Alo7HomeworkSDK.StateHandler? = nil)
+public func showHomework(_ homeworkId: Swift.String, token: Swift.String, from: UIKit.UIViewController, config: Alo7HomeworkSDK.Alo7HomeworkConfig? = nil, success: Alo7HomeworkSDK.SuccessHandler?, fail: Alo7HomeworkSDK.FailHandler?, stateHandler: Alo7HomeworkSDK.StateHandler? = nil)
 @objc @_hasMissingDesignatedInitializers public class Alo7HomeworkViewController : UIKit.UIViewController {
   public var urlString: Swift.String? {
     get
